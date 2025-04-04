@@ -1,0 +1,14 @@
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "GuidPro Backend is Live!"
+
+@app.route("/process", methods=["POST"])
+def process_audio():
+    data = request.get_json()
+    text = data.get("text")
+    # Do processing here (e.g., detect repetitions)
+    return jsonify({"processed_text": text.upper()})
