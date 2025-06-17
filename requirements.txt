@@ -1,0 +1,5 @@
+flask
+vosk
+numpy
+language-tool-python
+flask-cors
